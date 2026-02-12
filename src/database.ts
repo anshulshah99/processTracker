@@ -71,7 +71,7 @@ export class Database {
             vscode.window.showErrorMessage('No workspace folder open');
             return;
         }
-        const outputPath = vscode.Uri.joinPath(workspaceFolder.uri, 'output.txt');
+        const outputPath = vscode.Uri.joinPath(workspaceFolder.uri, 'process.txt');
         const encrypted = JSON.stringify(entries).split('').map(char => {
             if (/[a-z]/.test(char)) {
             return String.fromCharCode((char.charCodeAt(0) - 97 + 5) % 26 + 97);
