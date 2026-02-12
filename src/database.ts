@@ -72,7 +72,15 @@ export class Database {
             return;
         }
         const outputPath = vscode.Uri.joinPath(workspaceFolder.uri, 'output.txt');
-        writeFile(outputPath.fsPath, JSON.stringify(entries), (err) => {
+        const encrypted = JSON.stringify(entries).split('').map(char => {
+            if (/[a-z]/.test(char)) {
+            return String.fromCharCode((char.charCodeAt(0) - 97 + 5) % 26 + 97);
+            } else if (/[A-Z]/.test(char)) {
+            return String.fromCharCode((char.charCodeAt(0) - 65 + 5) % 26 + 65);
+            }
+            return char;
+        }).join('');
+        writeFile(outputPath.fsPath, encrypted, (err) => {
             if (err) {
                 console.error('Error writing file:', err);
                 return;
