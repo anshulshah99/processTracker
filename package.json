@@ -3,7 +3,7 @@
   "publisher": "anshul-shah",
   "displayName": "ProcessTracker",
   "description": "An extension to track the programming process",
-  "icon": "icon/robot.png",
+  "icon": "images/robot.png",
   "version": "0.2.0",
   "engines": {
     "vscode": "^1.105.0"
