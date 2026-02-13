@@ -25,10 +25,6 @@
       {
         "command": "processtracker.exportData",
         "title": "Export Process Data"
-      },
-      {
-        "command": "processtracker.clearData",
-        "title": "Clear Process Data"
       }
     ]
   },
